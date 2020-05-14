@@ -1,0 +1,125 @@
+<div class="container">
+
+    <h3>Allot users to Employee</h3>
+      
+     <div class="row">         
+        <div class="col-lg-6"> 
+
+          <div class="form-group">
+            <label>Select Employee</label>
+
+            <select name="empvalue" [(ngModel)]="emp.empid" class="form-control" (change)='onOptionsSelectedemp($event.target.value)'>   
+                <option value="0">--All--<option> 
+              <!-- <option *ngFor="let u of user" [value]="u.userid">{{u.firstname +'  '+ u.lastname}}</option> -->
+                <option *ngFor="let e of emp" value={{e.empid}} >{{e.empfirstname +'  '+ e.emplastname}}</option>    
+               </select>             
+        </div> 
+
+            <div class="form-group">
+                
+                <label>Select User</label>
+            <select name="uservalue" [(ngModel)]="user.userid" class="form-control" (change)='onOptionsSelected($event.target.value)'>   
+                <option value="0">--All--<option> 
+              <!-- <option *ngFor="let u of user" [value]="u.userid">{{u.firstname +'  '+ u.lastname}}</option> -->
+                <option *ngFor="let u of user" value={{u.userid}} >{{u.firstname +'  '+ u.lastname}}</option>    
+               </select>
+              
+            </div> 
+
+            <div class="text-center"><input type="submit" (click)='getUserInfo()'  value="step1"></div>
+
+           
+        </div>   
+     </div>      
+       
+      
+
+
+
+        <div *ngIf='allotDiv'>
+
+
+
+          <div class="row">
+
+            <div class="form-group">
+              <input type="text" name="empid" class="form-control" id="empid" placeholder="employee id" [(ngModel)]='emp.empid' data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <div class="validation"></div>
+            </div>
+           
+                 <div class="form-group">
+                <input type="text" name="useruserid" class="form-control" id="useruserid" placeholder="Your firstname" [(ngModel)]='user1.userid' data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+
+          <div class="form-group">
+            <input type="text" name="userfirstname" class="form-control" id="userfirstname" placeholder="Your firstname" [(ngModel)]='user1.firstname' data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" name="userlastname" class="form-control" id="userlastname" placeholder="Your lastname" [(ngModel)]='user1.lastname' data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="email" class="form-control" name="useremail" id="useremail" placeholder="Your Email"  [(ngModel)]='user1.email' data-rule="email" data-msg="Please enter a valid email" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="usermobileno" id="usermobileno" placeholder="Your mobile"   [(ngModel)]='user1.mobileno' data-rule="mobileno" data-msg="Please enter a valid mobile" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="date" class="form-control" name="userbirthdate" id="userbirthdate" placeholder="Your birthdate"   [(ngModel)]='user1.birthdate' data-rule="birthdate" data-msg="Please enter a valid birthdate" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="usercurrentaddress" id="usercurrentaddress" placeholder="Your currentaddress"  [(ngModel)]='user1.currentaddress'  data-rule="currentaddress" data-msg="Please enter a valid currentaddress" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="userpermanentaddress" id="userpermanentaddress" placeholder="Your permanentaddress"   [(ngModel)]='user1.permanentaddress'  data-rule="permanentaddress" data-msg="Please enter a valid permanentaddress" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="userpincode" id="userpincode" placeholder="pincode"    [(ngModel)]='user1.pincode'  data-rule="pincode" data-msg="Please enter a valid pincode" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="userpancard" id="userpancard" placeholder="pancard"    [(ngModel)]='user1.pancard'  data-rule="pancard" data-msg="Please enter a valid pancard" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="useraadharcard" id="useraadharcard" placeholder="aadharcard"    [(ngModel)]='user1.aadharcard'  data-rule="aadharcard" data-msg="Please enter a valid aadharcard" />
+            <div class="validation"></div>
+          </div>
+
+
+          <div class="form-group">
+            <input type="date" class="form-control" name="userusersince" id="userusersince" placeholder="usersince"    [ngModel]='user1.usersince'   data-rule="usersince" data-msg="Please enter a valid date" />
+            <div class="validation"></div>
+          </div>
+  
+              
+    </div>
+
+    <div class="text-center"><input type="submit" (click)='alloted()'  value="Allot"></div>
+  </div>
+
+
+
+
+          </div>
+
+  <div>
+ 
+
+    

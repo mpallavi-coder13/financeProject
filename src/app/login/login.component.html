@@ -1,0 +1,40 @@
+<!--==========================
+    Contact Section
+  ============================-->
+  <section id="contact" class="padd-section wow fadeInUp">
+
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Please Login</h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+
+      
+        <div class="col-lg-5 col-md-8">
+          <div class="form">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form action="" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <input type="text" name="username" [(ngModel)]="username" class="form-control" id="username" placeholder="User Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="password" [(ngModel)]="password" class="form-control" id="password" placeholder="Password" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+             
+              <div class="text-center">
+                <button  (click)="getLogin(username,password)"  type="submit">Login</button>&nbsp;<a routerLink="/forgotpassword">forgot password?</a>
+              
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- #contact -->

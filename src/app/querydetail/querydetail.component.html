@@ -1,0 +1,75 @@
+
+<div class="container">
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+            <th>User's Id</th>
+            <th>User's Name</th>
+            <th>Subject</th>
+            <th>Query in detail</th>
+            <th>Query Status</th>
+            <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let q of queries;'>
+                <td>{{q.user.userid}}</td>
+                <td>{{q.user.firstname}}</td>
+                <td>{{q.querysubject}}</td>
+                <td>{{q.query}}</td>
+                <td>{{q.querystatus}}</td>
+                <td><button (click)="sendResponse(q.queryid)" class="btn-primary">Response</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+<div *ngIf = 'responseDiv' class="container">
+    <div class="row">
+        <div class="col-md-12">
+			
+                <div id="contact-form" class="form-container" data-form-container>
+                    <div class="row">
+                        <div class="form-title">
+                            <span>Send Response</span>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <div class="row">
+                            <span class="req-input" >
+                                <span class="input-status" data-toggle="tooltip" data-placement="top" >{{queries1.user.userid}} </span>
+                                <input type="text" data-min-length="8"  value="{{queries1.user.firstname}}" disabled>
+                               
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span class="req-input">
+                                <span class="input-status" data-toggle="tooltip" data-placement="top" title="Please Input Your Email."> </span>
+                                <input type="text" class="form-control" name="email" id="email"  [(ngModel)]='queries1.user.email'  />
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span class="req-input">
+                                <span class="input-status" data-toggle="tooltip" data-placement="top" title="Please Input Your Email."> </span>
+                                <input type="text" class="form-control" name="queryid" id="queryid"   [(ngModel)]='queries1.queryid'  />
+                            </span>
+                        </div>
+                       
+                        <div class="row">
+                            <span class="req-input">
+                                <span class="input-status" data-toggle="tooltip" data-placement="top" title="Please Input Your Phone Number."> </span>
+                               <textarea type="textarea" name ="responseMessage" data-min-length="10" placeholder="Type response here...." [(ngModel)]= 'responseMessage'></textarea>
+                            </span>
+                        </div>
+
+                        <div class="row submit-row">
+                            <button type="button" class="btn btn-block submit-form" (click)='letsendResponse()'>Submit</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+
+</div>
+</div>

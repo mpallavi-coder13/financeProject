@@ -1,0 +1,82 @@
+ <!--==========================
+    Team Section
+  ============================-->
+  <section id="team" class="padd-section text-center wow fadeInUp">
+
+    <div class="container">
+      <div class="section-title text-center">
+
+        <h2>EMI Calculator</h2>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-md-4 col-lg-3">
+          <div class="team-block bottom">
+            <div class="form">
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm">
+                <h2>EMI Calculator</h2>
+                <div class="form-group">
+                  <input type="text" name="loanAmount" [(ngModel)]="loanAmount"     class="form-control" id="loanAmount" placeholder="Enter Loan Amount" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="annualInterstRate"  [(ngModel)]="annualInterstRate"    class="form-control" id="annualInterstRate" placeholder="Enter Interest Rate" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="loanTenure" [(ngModel)]="loanTenure" interestRate="loanTenure"    class="form-control" id="loanTenure" placeholder="Enter Loan Tenure" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+  
+                
+  
+                
+               
+                <div class="text-center"><button (click)='calculateLoan()'  type="submit">Submit</button></div>
+              </form>
+            </div>  
+          </div>
+        </div>
+
+       <div *ngIf="divopen" class="col-md-6 col-md-4 col-lg-3">
+          <div class="team-block bottom">
+            <h2>Calculated Loan</h2>
+           <label>Loan Amount is: {{loanAmount}}</label><br/>
+           <label>Interest Rate is: {{interestRate}}</label><br/>
+           <label>Loan Tenure is: {{loanTenure}}</label><br/>
+          </div>  
+
+        
+        </div>
+
+        <div *ngIf="divopen" class="col-md-6 col-md-4 col-lg-3">
+          <div class="team-block bottom">
+            <label>Loan EMI</label><br/>
+            <span>{{monthlyPayment | number:'1.0-0' | currency:"INR"}}</span><br/>
+            <label>Total Interest Payable</label><br/>
+            <span>{{totalPayment | currency:"INR" :true:'1.0-0'}}</span><br/>
+            <label>Total Of Payments</label>
+            <span>(principle+interest)</span><br/>
+            <span>{{totalinterestpayable | currency:"INR" :true: '1.0-0'}}</span>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-md-4 col-lg-3">
+          <div class="team-block bottom">
+            <p>think what we can add here</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--==========================
+    Testimonials Section
+  ============================-->

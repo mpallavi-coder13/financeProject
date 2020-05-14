@@ -1,0 +1,94 @@
+<div class="container">
+    <h3>Add Loan Products</h3>
+      <form action="" method="post" role="form" class="contactForm">
+      <div class="row">
+          <div class="col-lg-6"> <div class="form-group">
+              <input type="text" name="loantype" class="form-control" id="loantype" placeholder="loantype" [(ngModel)]='loanm.loantype' data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <div class="validation"></div>
+            </div>         
+  
+            <div class="form-group">
+              <input type="text" class="form-control" name="loaninterest" id="loaninterest" placeholder="Loan interest"  [(ngModel)]='loanm.loaninterest' data-rule="email" data-msg="Please enter a valid email" />
+              <div class="validation"></div>
+            </div>        
+  
+            <div class="form-group">
+              <input type="text" class="form-control" name="loanrangemin" id="loanrangemin" placeholder="Laon Range miniumum"  [(ngModel)]='loanm.loanrangemin'  data-rule="currentaddress" data-msg="Please enter a valid currentaddress" />
+              <div class="validation"></div>
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control" name="loanrangemax" id="loanrangemax" placeholder="Laon Range maximum"  [(ngModel)]='loanm.loanrangemax'  data-rule="currentaddress" data-msg="Please enter a valid currentaddress" />
+              <div class="validation"></div>
+            </div>   
+  
+  
+          </div>
+         
+        </div>
+       
+      
+        <div class="text-center"><input type="submit" (click)='addLoanMaster()' value="submit"></div>
+        </form>
+
+
+        <div>
+          <h5 *ngIf='DelsuceessDiv' style="color: green;">Data deleted</h5>
+          <h5 *ngIf='addedsuceessDiv' style="color: green;">Data Added</h5>
+          <h5 *ngIf='edittedsuceessDiv' style="color: green;">Data Edited</h5>
+
+
+
+          <h3>Loan Product Details</h3>
+          <table class="table table-hover">
+              <thead>
+                  <th>Loan type</th>
+                  <th>Rate of interest</th>
+                  <th>Loan min range</th>
+                  <th>Loan max range</th>           
+                  <th colspan="2">Action</th>            
+                 
+              </thead>
+          <tbody>
+            <tr *ngFor='let l of loanm1;'>
+                <td>{{l.loantype}}</td> 
+                <td>{{l.loaninterest}}</td> 
+                <td>{{l.loanrangemin}}</td> 
+                <td>{{l.loanrangemax}}</td>          
+                        
+                 <td>
+                    <button (click)="editLoanMasterData(l.loanmanagementid)">Edit</button>&nbsp;
+                    <button (click)="deleteLoanMaster(l.loanmanagementid)">Delete</button>
+                  </td>        
+            </tr>    
+          </tbody>    
+            </table>
+      
+        </div>
+      
+        
+        <div *ngIf="tobeeditDiv" style="width: 697px;"> 
+          <table>
+            <tr>
+              <td><input type="text" name="loanmanagementid" id="loanmanagementid" [(ngModel)]="loanm.loanmanagementid" class="form-control" disabled></td> 
+              <td><input type="text" name="loantype" id="loantype" [(ngModel)]="loanm.loantype" class="form-control "></td> 
+              <td><input type="text" name="loaninterest" id="loaninterest" [(ngModel)]="loanm.loaninterest" class="form-control "></td> 
+              <td><input type="text" name="loanrangemin" id="loanrangemin" [(ngModel)]="loanm.loanrangemin" class="form-control "></td> 
+              <td><input type="text" name="loanrangemax" id="loanrangemax" [(ngModel)]="loanm.loanrangemax" class="form-control "></td> 
+              <td><input type="submit" (click)="updating(loanm)" value="Update"></td>
+  
+  
+              
+            </tr>
+          </table>
+          </div>
+      
+
+
+
+
+
+       
+    </div>
+
+    

@@ -1,0 +1,201 @@
+    <div class="col-lg-9" style=" margin-top: 20px;">
+      <div>
+        <canvas id="barChart"></canvas>
+      </div>  
+      <div   *ngIf="bodyDiv">   
+        <div class="row" style=" margin-top: 20px; ">
+            <div class="col-lg-3">
+                <div>
+                    <div class="stat-widget-two">
+                        <button type="button" class="btn btn-danger" (click)='showEmp()'>Total Employee({{this.emp}})</button>
+    
+                        <!-- <div class="progress">
+                            <div class="progress-bar progress-bar-success w-85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-lg-3">
+                <div>
+                    <div class="stat-widget-two">
+                        <button type="button" class="btn btn-primary" (click)='showUser()'>Total Users</button>                            
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-lg-3">
+                <div>
+                    <div class="stat-widget-two">
+                        <button type="button" class="btn btn-warning" (click)='lapp()'>Laon Approved</button>                           
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-lg-3">
+                <div>
+                    <div class="stat-widget-two">
+                        <button type="button" class="btn btn-primary" (click)='lpen()'>Loan Pending</button>                           
+                    </div>
+                </div>
+            </div>
+         </div>
+         <div style="margin-top: 50px;" *ngIf="empDiv">
+          <h2>Employee Details</h2>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+            
+            </div>
+    
+    
+            <div style="margin-top: 50px;" *ngIf="userDiv">
+              <h2>Users Details</h2>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Address</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                
+                </div>
+    
+    
+                <div style="margin-top: 50px;" *ngIf="lapprovedDiv">
+                  <h2>Approved Laon Details</h2>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Address</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    
+                    </div>
+    
+    
+                    <div style="margin-top: 50px;" *ngIf="lpendingDiv">
+                      <h2>Pending Laon Details</h2>
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Address</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                              </tr>
+                            </tbody>
+                          </table>                            
+                        </div>
+    
+                        
+    </div>
+    
+    <div *ngIf="displayAdmin">
+      <h2>profile  Info       </h2>
+      <label>Name :{{this.admin.name}}</label>
+      <label>Address :{{this.admin.address}}</label>
+    </div>
+    
+    <div *ngIf="displayAddEmp">
+      <h2>Add Employee</h2>
+     
+    </div>
+    
+    </div>
+    
+     

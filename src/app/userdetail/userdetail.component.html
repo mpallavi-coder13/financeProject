@@ -1,0 +1,85 @@
+<div class="container">
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+            <th>User's Id</th>
+            <th>User's Name</th>
+            <th>User's Email</th>
+            <th>User's Status</th>
+            <th>Employee Name</th>
+            <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let u of user;'>
+                <td>{{u.userid}}</td>
+                <td>{{u.firstname}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.userstatus}}</td>
+                <td>{{u.Employee}}</td>
+                <td><button (click)="viewDetails(u.userid)" class="btn-primary">View Details</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+<div *ngIf = 'viewDetailsDiv'>
+<h5>Users details</h5>
+
+<!-- <div class="row">
+    <div class="col-lg-12">
+        <div class=""col-sm-4>
+        <p class="bg-info" style="font-weight: bold;">&nbsp;ID : {{user1.userid}}</p>
+        <p class="bg-info" style="font-weight: bold;">&nbsp;Full Name : {{user1.firstname+' '+user1.lastname}}</p>
+        </div>
+        <label></label>&nbsp; <label>Email : {{user1.email}}</label>&nbsp;
+        <label>Mobile : {{user1.mobileno}}</label>&nbsp;<br/>
+
+        <label>Pan card : {{user1.pancard}}</label> &nbsp; 
+        <label>Aadhar Card : {{user1.aadharcard}}</label>&nbsp; <label>BirthDate : {{user1.birthdate}}</label>&nbsp;
+        <label>Usersince : {{user1.usersince}}</label>&nbsp;<br/>
+
+
+    </div>
+
+
+</div> -->
+
+<div class="row">
+    <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;ID : {{user1.userid}}</p></div>
+    <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;Full Name : {{user1.firstname+' '+user1.lastname}}</p></div>
+    <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;Email : {{user1.email}}</p></div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4"><p class="bg-warning" style="font-weight: bold;">&nbsp;Mobile no : {{user1.mobileno}}</p></div>
+    <div class="col-sm-4"><p class="bg-warning" style="font-weight: bold;">&nbsp;BirthDate: {{user1.birthdate}}</p></div>
+    <div class="col-sm-4"><p class="bg-warning" style="font-weight: bold;">&nbsp;User Since : {{user1.usersince}}</p></div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;P-Address : {{user1.permanentaddress}}</p></div>
+    <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;C-Address  : {{user1.currentaddress}}</p></div>
+    <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;Pincode : {{user1.pincode}}</p></div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4"><p class="bg-warning" style="font-weight: bold;">&nbsp;Aadhar card: {{user1.aadharcard}}</p></div>
+    <div class="col-sm-4"><p class="bg-warning" style="font-weight: bold;">&nbsp;Pan card: {{user1.pancard}}</p></div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;User status : {{user1.userstatus}}</p></div>
+    <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;Employee alloted : {{user1.empid}}</p></div>
+</div>
+
+<button (click)="closeDiv()" class="btn-danger">Close</button>
+
+
+</div>
+
+
+
+
+
+
+    </div>

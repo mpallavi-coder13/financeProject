@@ -1,0 +1,40 @@
+<div class="container">
+    <h3>Employee Details</h3>
+   <table class="table table-hover">
+        <thead>
+            <th>Emp's Name</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Mobile</th>           
+            <th colspan="2">Action</th>     
+        </thead>
+    <tbody>
+      <tr *ngFor='let e of emp;'>
+          <td>{{e.empfirstname}}</td> 
+          <td>{{e.emplastname}}</td> 
+          <td>{{e.email}}</td> 
+          <td>{{e.mobileno}}</td>          
+                  
+           <td>
+              <button (click)="viewData(e.empid)">View</button>&nbsp;
+              <button (click)="editData(e.empid)">Edit</button>&nbsp;
+              <button (click)="deleteData(e.empid)">Delete</button>
+            </td>        
+      </tr>    
+    </tbody>    
+      </table>
+
+
+      <div *ngIf="tobeeditDiv" style="width: 697px;"> 
+        <table>
+          <tr>
+            <td><input type="text" name="empid" id="empid" [(ngModel)]="emp1.empid" class="form-control "></td> 
+            <td><input type="text" name="empfirstname" id="empfirstname" [(ngModel)]="emp1.empfirstname" class="form-control "></td> 
+            <td><input type="text" name="emplastname" id="emplastname" [(ngModel)]="emp1.emplastname" class="form-control "></td> 
+            <td><input type="text" name="email" id="email" [(ngModel)]="emp1.email" class="form-control "></td> 
+            <td><input type="text" name="mobileno" id="mobileno" [(ngModel)]="emp1.mobileno" class="form-control "></td> 
+            <td><input type="submit" (click)="updating(emp1)" value="Update"></td>            
+          </tr>
+        </table>
+    </div>
+      </div>

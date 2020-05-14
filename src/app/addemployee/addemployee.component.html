@@ -1,0 +1,98 @@
+<div class="container">
+  <h3>Employee Registration</h3>
+    <form action="" method="post" role="form" class="contactForm">
+    <div class="row">
+        <div class="col-lg-6"> <div class="form-group">
+            <input type="text" name="empfirstname" class="form-control" id="empfirstname" placeholder="Employee firstname" [(ngModel)]='emp.empfirstname' data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+            <div class="validation"></div>
+          </div>         
+
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Employee Email"  [(ngModel)]='emp.email' data-rule="email" data-msg="Please enter a valid email" />
+            <div class="validation"></div>
+          </div>        
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="currentaddress" id="currentaddress" placeholder="Employee currentaddress"  [(ngModel)]='emp.currentaddress'  data-rule="currentaddress" data-msg="Please enter a valid currentaddress" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <label>BirthDate</label>
+            <input type="date" class="form-control" name="birthdate" id="birthdate" placeholder="Employee birthdate"   [(ngModel)]='emp.birthdate' data-rule="birthdate" data-msg="Please enter a valid birthdate" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="pancard" id="pancard" placeholder="pancard"    [(ngModel)]='emp.pancard'  data-rule="pancard" data-msg="Please enter a valid pancard" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="username" id="username" placeholder="username"   [(ngModel)]='login.username'   data-rule="username" data-msg="Please enter a valid username" />
+            <div class="validation"></div>
+          </div>
+
+          
+          <div class="form-group">
+            <input type="text" class="form-control" name="pincode" id="pincode" placeholder="pincode"    [(ngModel)]='emp.pincode'  data-rule="pincode" data-msg="Please enter a valid pincode" />
+            <div class="validation"></div>
+          </div>
+
+          
+
+
+        </div>
+        <div class="col-lg-6"> 
+
+          <div class="form-group">
+            <input type="text" name="emplastname" class="form-control" id="emplastname" placeholder="Empoyee lastname" [(ngModel)]='emp.emplastname' data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="mobileno" id="mobileno" placeholder="Employee mobile"   [(ngModel)]='emp.mobileno' data-rule="mobileno" data-msg="Please enter a valid mobile" />
+            <div class="validation"></div>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" class="form-control" name="permanentaddress" id="permanentaddress" placeholder="Employee permanentaddress"   [(ngModel)]='emp.permanentaddress'  data-rule="permanentaddress" data-msg="Please enter a valid permanentaddress" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <label>Joining Date</label>
+            <input type="date" class="form-control" name="sincedate" id="sincedate" placeholder="Employee since"   [(ngModel)]='emp.sincedate' data-rule="sincedate" data-msg="Please enter a valid birthdate" />
+            <div class="validation"></div>
+          </div>
+
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="aadharcard" id="aadharcard" placeholder="aadharcard"    [(ngModel)]='emp.aadharcard'  data-rule="aadharcard" data-msg="Please enter a valid aadharcard" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" id="password" placeholder="password"   [(ngModel)]='login.password'  data-rule="password" data-msg="Please enter a valid password" />
+            <div class="validation"></div>
+          </div>  
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="type" id="type" placeholder="employee"   [(ngModel)]='type'   data-rule="type" disabled/>
+            <div class="validation"></div>
+          </div>  
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="status" id="status" placeholder="status "   [(ngModel)]='status'   data-rule="status" disabled/>
+            <div class="validation"></div>
+          </div>  
+          
+          
+</div>
+      </div>
+     
+    
+      <div class="text-center"><button (click)='employeesignup()' type="submit">Sign Up</button></div>
+      </form>
+  </div>
+  

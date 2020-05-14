@@ -1,0 +1,63 @@
+<!--==========================
+    About Us Section
+  ============================-->
+  
+  <section id="about-us" class="about-us padd-section wow fadeInUp" >
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-3">
+              
+        <div class="proSidebar">
+            <br>
+            <img src="../../assets/img/user.jpg" alt="Profile">
+            
+            <br/>
+            <h5 class="proName">Welcome</h5>
+            <h4 class="proDesig">{{user.firstname}}</h4>
+            <hr/>
+            <div id='cssmenu'>
+                <ul>
+                   <li><button (click)='homeCall()' class="btn btn-primary">Home</button></li>
+                   <li><button (click)='showAdmin()' class="btn btn-primary">Profile</button></li>
+                   <li class='has-sub' ><button class="btn btn-primary">Employee</button>
+                    <ul>
+                        <li><button  (click)='viewEmp()' class="btn btn-primary">View Employee</button>
+                       <li><button  (click)='addEmp()' class="btn btn-primary">Add Employee</button>                        
+                       </li>
+                    </ul>
+                 </li>                   
+                 <li class='has-sub' ><button class="btn btn-primary">Employee</button>
+                    <ul>
+                        <li><button  (click)='viewUser()' class="btn btn-primary">View Employee</button>
+                       </li>
+                    </ul>
+                 </li>     
+
+                 <li class='has-sub' ><button class="btn btn-primary">Loan Management</button>
+                    <ul>
+                        <li><button  (click)='addLoanProduct()' class="btn btn-primary">Add Loan Product</button></li>
+                        <li><button  (click)='addLoanRoi()' class="btn btn-primary">Add Loan ROI</button></li>
+
+                    </ul>
+                 </li>     
+                 <li class='has-sub' ><button class="btn btn-primary">Report Management</button></li>
+                    <li class='has-sub' ><button class="btn btn-primary" (click)="getQuery(user.userid)">Query</button>
+                        <li class='has-sub' ><button class="btn btn-primary">Feedback</button>
+                            <li class='has-sub' ><button class="btn btn-primary">LogOut</button>
+
+
+                    </ul>
+                </div>
+        </div>
+    </div>
+
+
+    
+   <div *ngIf='showOtherDiv'> <router-outlet></router-outlet></div>
+       <div *ngIf="showUserDiv"><h2>Welcome User Panel</h2></div>
+       
+
+
+      </div>
+    </div>
+  </section>

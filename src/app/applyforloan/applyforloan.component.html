@@ -1,0 +1,135 @@
+<div class="container">
+  <!-- <form action="" method="post" role="form" class="contactForm"> -->
+  <h3>Loan Application form</h3>
+  <!-- <p>hh{{u.emp.empid}}</p> -->
+
+     <select [value]="uservalue" class="form-control" (change)='onOptionsSelected($event.target.value)'>   
+      <option value="0">--All--<option> 
+    <!-- <option *ngFor="let u of user" [value]="u.userid">{{u.firstname +'  '+ u.lastname}}</option> -->
+      <option *ngFor="let u of user" value={{u.userid}} >{{u.firstname +'  '+ u.lastname}}</option>    
+     </select> <br>
+
+     <div *ngIf="userDiv"><br>
+
+       <h5>User's Information:</h5>
+         <table class="table table dark">
+   <tr>
+        <td>            
+        <input type="text" name="firstname" class="form-control" id="firstname" placeholder="User firstname" [(ngModel)]='user1.firstname' disabled/>
+      </td>
+        &nbsp;
+        <td>
+          <input type="text" name="lastname" class="form-control" id="lastname" placeholder="User lastname" [(ngModel)]='user1.lastname' disabled/>
+        </td>
+   </tr>
+
+   <tr>
+      <td>
+        <input type="text" name="currentaddress" class="form-control" id="currentaddress" placeholder="User currentaddress" [(ngModel)]='user1.currentaddress' disabled/>
+      </td>
+      &nbsp;
+      <td><input type="text" name="permanentaddress" class="form-control" id="permanentaddress" placeholder="User permanentaddress" [(ngModel)]='user1.permanentaddress' disabled/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>            
+      <input type="text" name="mobileno" class="form-control" id="mobileno" placeholder="User mobileno" [(ngModel)]='user1.mobileno' disabled/>
+    </td>
+      &nbsp;
+      <td>
+        <input type="text" name="birthdate" class="form-control" id="birthdate" placeholder="User birthdate" [(ngModel)]='user1.birthdate' disabled/>
+      </td>
+ </tr>
+ <tr>
+  <td>            
+  <input type="text" name="email" class="form-control" id="email" placeholder="User email" [(ngModel)]='user1.email' disabled/>
+</td>
+  &nbsp;
+  <td>
+    <input type="text" name="pincode" class="form-control" id="pincode" placeholder="User pincode" [(ngModel)]='user1.pincode' disabled/>
+  </td>
+</tr>
+<tr>
+  <td>            
+  <input type="text" name="pancard" class="form-control" id="pancard" placeholder="User pancard" [(ngModel)]='user1.pancard' disabled/>
+  </td>
+  &nbsp;
+  <td>
+    <input type="text" name="aadharcard" class="form-control" id="aadharcard" placeholder="User aadharcard" [(ngModel)]='user1.aadharcard' disabled/>
+  </td>
+</tr>
+
+<tr>
+  <td>            
+  <input type="text" name="sincedate" class="form-control" id="sincedate" placeholder="User sincedate" [(ngModel)]='user1.sincedate' disabled/>
+</td>
+  &nbsp;
+ 
+</tr>
+
+
+<tr>
+  <td>            
+  <input type="text" name="username" class="form-control" id="username" placeholder="User username" [(ngModel)]='user1.login.username' disabled/>
+</td>
+  &nbsp;
+  <td>
+    <input type="text" name="password" class="form-control" id="password" placeholder="User password" [(ngModel)]='user1.login.password' disabled/>
+  </td>
+</tr>
+
+<tr>
+  <td>            
+  <input type="text" name="type" class="form-control" id="type" placeholder="User type" [(ngModel)]='user1.login.type' disabled/>
+</td>
+  &nbsp;
+ 
+</tr>
+<tr *ngIf="varifyDiv">      <td><label><input type="submit" (click)="varifyLoan(user1.userid)" class="btn btn-primary" value="Varify details"></label> </td>
+</tr>
+
+        </table>
+        <div *ngIf="typeDiv">
+        <label>Loan type selected :</label>
+      <select name="loantype" id="loantype" [(ngModel)]='user1.loan.loantype' class="form-control" (change)='onOptionsLoan($event.target.value)'>   
+           <option value="0">--All--<option> 
+            <option *ngFor="let lv of lmt" [(value)]="lv.loanmanagementid">{{lv.loantype}}</option>  
+      </select> 
+
+
+      <div *ngIf="loanDiv">
+            <table>
+            <tr>
+              <td><label>Laon Duration :</label>
+                <input type="text" class="form-control" name="loanduration" [(ngModel)]="user1.loan.loanduration">
+              </td>
+              <td><label>Loan Amount:</label>
+                <input type="text" class="form-control" name="loanamount"  [(ngModel)]="user1.loan.loanamount">
+              </td>
+            </tr>
+
+            <tr>
+              <td><label>Laon Interest :</label>
+                <input type="text" class="form-control" name="loaninterest"  [(ngModel)]='lmt1.loaninterest'  disabled>
+              </td>
+              </tr>
+
+              <tr *ngIf="okDiv">
+                <td><label><input type="submit" (click)="submitLoan(user1)" class="btn btn-primary" value="submit"></label>
+                </td>
+                </tr>
+
+            </table>
+
+      </div>
+
+    </div> 
+  <!-- </form> -->
+
+
+
+     </div>
+
+     <div *ngIf="successDivs"><h2 style="color: green;">thank you !</h2><p>You have suceessfully applied for loan</p></div>
+

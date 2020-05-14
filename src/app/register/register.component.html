@@ -1,0 +1,103 @@
+<!--==========================
+    Contact Section
+  ============================-->
+  <section id="contact" class="padd-section wow fadeInUp">
+
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Sign Up</h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+
+        
+        <div class="col-lg-5 col-md-8">
+          <div class="form">
+            <div id="errormessage"></div>
+            <form action="" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Your firstname" [(ngModel)]='user.firstname' data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Your lastname" [(ngModel)]='user.lastname' data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"  [(ngModel)]='user.email' data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="mobileno" id="mobileno" placeholder="Your mobile"   [(ngModel)]='user.mobileno' data-rule="mobileno" data-msg="Please enter a valid mobile" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="date" class="form-control" name="birthdate" id="birthdate" placeholder="Your birthdate"   [(ngModel)]='user.birthdate' data-rule="birthdate" data-msg="Please enter a valid birthdate" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="currentaddress" id="currentaddress" placeholder="Your currentaddress"  [(ngModel)]='user.currentaddress'  data-rule="currentaddress" data-msg="Please enter a valid currentaddress" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="permanentaddress" id="permanentaddress" placeholder="Your permanentaddress"   [(ngModel)]='user.permanentaddress'  data-rule="permanentaddress" data-msg="Please enter a valid permanentaddress" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="pincode" id="pincode" placeholder="pincode"    [(ngModel)]='user.pincode'  data-rule="pincode" data-msg="Please enter a valid pincode" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="pancard" id="pancard" placeholder="pancard"    [(ngModel)]='user.pancard'  data-rule="pancard" data-msg="Please enter a valid pancard" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="aadharcard" id="aadharcard" placeholder="aadharcard"    [(ngModel)]='user.aadharcard'  data-rule="aadharcard" data-msg="Please enter a valid aadharcard" />
+                <div class="validation"></div>
+              </div>
+
+
+              <div class="form-group">
+                <input type="date" class="form-control" name="usersince" id="usersince" placeholder="usersince"    [(ngModel)]='user.usersince'   data-rule="usersince" data-msg="Please enter a valid date" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="username" id="username" placeholder="username"   [(ngModel)]='login.username'   data-rule="username" data-msg="Please enter a valid username" />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <input type="password" class="form-control" name="password" id="password" placeholder="password"   [(ngModel)]='login.password'  data-rule="password" data-msg="Please enter a valid password" />
+                <div class="validation"></div>
+              </div>  
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="type" id="type" placeholder="user"   [(ngModel)]='type'   data-rule="type" disabled/>
+                <div class="validation"></div>
+              </div>  
+
+              <div class="form-group">
+                <input type="text" class="form-control" name="userstatus" id="userstatus" placeholder="userstatus"   [(ngModel)]='userstatus'   data-rule="userstatus" disabled/>
+                <div class="validation"></div>
+              </div>                
+        
+        
+              <div class="text-center"><button (click)='signup()' type="submit" routerLink="/registersuceess">Sign Up</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- #contact -->

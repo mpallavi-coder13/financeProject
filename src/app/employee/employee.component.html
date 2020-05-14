@@ -1,0 +1,84 @@
+<!--==========================
+    About Us Section
+  ============================-->
+  
+  <section id="about-us" class="about-us padd-section wow fadeInUp" >
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-3">
+              
+        <div class="proSidebar">
+            <br>
+            <img src="../../assets/img/emp.jpg" alt="Profile">
+            
+            <br/>
+            <h5 class="proName">Welcome</h5>
+            <h4 class="proDesig"></h4>
+            <hr/>
+            <div id='cssmenu'>
+                <ul>
+                   <li><button (click)='homeCall()' class="btn btn-primary">Home</button></li><br/>
+                   <li><button (click)='showAdmin()' class="btn btn-primary">Profile</button></li>
+                   <li class='has-sub' ><button class="btn btn-primary">Employee</button>
+                    <ul>
+                       <li><button  (click)='addEmp()' class="btn btn-primary">Add Employee</button>
+                       <li><a href='#'><span>other</span></a>
+                        
+                       </li>
+                    </ul>
+                 </li>                   
+                 <li><button (click)='applyLoan()' class="btn btn-primary">Apply Loan</button></li>
+
+                   <li class='has-sub' ><a href='#'><span>Products</span></a>
+                      <ul>
+                         <li class='has-sub'><a href='#'><span>Product 1</span></a>
+                            <ul>
+                               <li><a href='#'><span>Sub Product</span></a></li>
+                               <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                            </ul>
+                         </li>
+                         <li class='has-sub'><a href='#'><span>Product 2</span></a>
+                            <ul>
+                               <li><a href='#'><span>Sub Product</span></a></li>
+                               <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                            </ul>
+                         </li>
+                      </ul>
+                   </li>
+                   <li><a href='#'><span>About</span></a></li>
+                   <li class='last'><a href='#'><span>Contact</span></a></li>
+                </ul>
+                </div>
+        </div>
+    </div>
+
+
+    
+    <router-outlet></router-outlet>
+    <div class="tab-pane fade show active"  role="tabpanel" aria-labelledby="home-tab" *ngIf="welcomeDiv">
+      <div class="row">
+         <div class="col-md-6">
+             <label>User Id</label>
+         </div>
+         <div class="col-md-6">
+             <p>{{emp.empid}}</p>
+         </div>
+     </div>
+     <div class="row">
+      <div class="col-md-6">
+          <label>First Name</label>
+      </div>
+      <div class="col-md-6">
+          <p>{{emp.empfirstname}}</p>
+      </div>
+  </div>
+
+ 
+  
+    </div>
+       
+
+
+      </div>
+    </div>
+  </section>
