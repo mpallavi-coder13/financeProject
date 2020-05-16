@@ -1,7 +1,8 @@
 
   
-  
-    <div class="container">
+    <section id="about-us" class="about-us padd-section wow fadeInUp" >
+
+<div class="container">
       <div class="row">
           <div class="col-lg-3">
               
@@ -13,142 +14,139 @@
             <h5 class="proName">Welcome</h5>
             <h4 class="proDesig">{{this.emp.login.username}} </h4>
             <hr/>
-                      <div id='cssmenu'>
-               
-                    <ul>
-                      <!-- <li><button (click)='getHome()' class="btn btn-primary">Home</button></li> -->
-                      <li><button (click)='test()' class="btn btn-primary">Test Component</button></li>
-
-                      <li class='has-sub' ><button class="btn btn-primary">Employee</button>
+            <div id='cssmenu'>
+                
                         <ul>
-                           <li><button  (click)='addEmp()' class="btn btn-primary">Add Employee</button>
-                            <li><button  (click)='viewEmp(typeOfEmp)' class="btn btn-primary">View Employee</button>
+                        <!-- <li><button (click)='getHome()' class="btn btn-primary">Home</button></li> -->
+                        <li><button (click)='test()' class="btn btn-primary">Test Component</button></li>
+
+                        <li class='has-sub' ><button class="btn btn-primary">Employee</button>
+                            <ul>
+                            <li><button  (click)='addEmp()' class="btn btn-primary">Add Employee</button>
+                                <li><button  (click)='viewEmp(typeOfEmp)' class="btn btn-primary">View Employee</button>
+                                
+                            </li>
+                            </ul>
+                        </li>  
+                        <li class='has-sub' ><button class="btn btn-primary">User</button>
+                            <ul>
+                        <li><button (click)='allotUser(statusOfUser)' class="btn btn-primary">Allot User</button></li>
+                        <li><button (click)='getUserDetails()' class="btn btn-primary">User's Detail</button></li>
+                            </ul>
+                        </li>
+                        <li class='has-sub' ><button class="btn btn-primary">Loan Management</button>
+                            <ul>
+                            <li><button  (click)='addLoanProduct()' class="btn btn-primary">Loan Products</button>
+                                
+                            </li>
                             
-                           </li>
-                        </ul>
-                     </li>  
-                     <li class='has-sub' ><button class="btn btn-primary">User</button>
-                        <ul>
-                     <li><button (click)='allotUser(statusOfUser)' class="btn btn-primary">Allot User</button></li>
-                     <li><button (click)='getUserDetails()' class="btn btn-primary">User's Detail</button></li>
-                        </ul>
-                     </li>
-                     <li class='has-sub' ><button class="btn btn-primary">Loan Management</button>
-                        <ul>
-                           <li><button  (click)='addLoanProduct()' class="btn btn-primary">Loan Products</button>
-                            
-                           </li>
-                          
-                        </ul>
-                     </li>  
+                            </ul>
+                        </li>  
 
-                     <li><button (click)='getFeedback()' class="btn btn-primary">View Feedback</button></li>
+                        <li><button (click)='getFeedback()' class="btn btn-primary">View Feedback</button></li>
 
-                     <li><button (click)='getQueryDetail()' class="btn btn-primary">Query Details</button></li>
+                        <li><button (click)='getQueryDetail()' class="btn btn-primary">Query Details</button></li>
 
 
-                     <li><button (click)='getReport()' class="btn btn-primary">Report</button></li>
+                        <li><button (click)='getReport()' class="btn btn-primary">Report</button></li>
 
-                     <li><button (click)='logout()' class="btn btn-primary">Logout</button></li>
-
-    
-                      </ul>
-
-                </div>
-        </div>
-    </div>    
-    
-  
-
-
-<!-- Profile template -->
-
-<div class="tab-pane fade show active"  role="tabpanel" aria-labelledby="home-tab" *ngIf="profileDiv">
-  <div class="row">
-      <div class="col-md-6">
-          <label>User Id</label>
-      </div>
-      <div class="col-md-6">
-          <p>{{emp.empid}}</p>
-      </div>
-  </div>
-  <div class="row">
-      <div class="col-md-6">
-          <label>First Name</label>
-      </div>
-      <div class="col-md-6">
-          <p>{{emp.empfirstname}}</p>
-      </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-        <label>Last Name</label>
-    </div>
-    <div class="col-md-6">
-        <p>{{emp.emplastname}}</p>
-    </div>
-</div>
-  <div class="row">
-      <div class="col-md-6">
-          <label>Email</label>
-      </div>
-      <div class="col-md-6">
-          <p>{{emp.email}}</p>
-      </div>
-  </div>
-  <div class="row">
-      <div class="col-md-6">
-          <label>Phone</label>
-      </div>
-      <div class="col-md-6">
-          <p>{{emp.mobileno}}</p>
-      </div>
-  </div>
-  <div class="row">
-      <div class="col-md-6">
-          <label>Employee Since</label>
-      </div>
-      <div class="col-md-6">
-          <p>{{emp.sincedate}}</p>
-      </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-        <label>Address</label>
-    </div>
-    <div class="col-md-6">
-        <p>{{emp.currentaddress}}</p>
-    </div>
-
-    <input type="submit" (click)="editData(this.emp)" class="btn btn-warning" value="Update yourSelf">
-
-  </div>
-
-  <div *ngIf="tobeeditDiv" style="width: 697px;"> 
-    <table>
-      <tr>
-        <td><input type="text" name="empid" id="empid" [(ngModel)]="this.emp.empid" class="form-control "></td> 
-        <td><input type="text" name="empfirstname" id="empfirstname" [(ngModel)]="this.emp.empfirstname" class="form-control "></td> 
-        <td><input type="text" name="emplastname" id="emplastname" [(ngModel)]="this.emp.emplastname" class="form-control "></td> 
-        <td><input type="text" name="email" id="email" [(ngModel)]="this.emp.email" class="form-control "></td> 
-        <td><input type="text" name="mobileno" id="mobileno" [(ngModel)]="this.emp.mobileno" class="form-control "></td> 
-        <td><input type="submit" (click)="updating(this.emp)" value="Update"></td>
-
+                        <li><button (click)='logout()' class="btn btn-primary">Logout</button></li>
 
         
-      </tr>
-    </table>
-    </div>
+                        </ul>
+
+            </div>
+        </div>
+    </div>    
+                <!-- Profile template -->
+
+            <div class="tab-pane fade show active"  role="tabpanel" aria-labelledby="home-tab" *ngIf="profileDiv">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>User Id</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{emp.empid}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>First Name</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{emp.empfirstname}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Last Name</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{emp.emplastname}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Email</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{emp.email}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Phone</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{emp.mobileno}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Employee Since</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{emp.sincedate}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Address</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{emp.currentaddress}}</p>
+                </div>
+
+                <input type="submit" (click)="editData(this.emp)" class="btn btn-warning" value="Update yourSelf">
+
+            </div>
+
+            <div *ngIf="tobeeditDiv" style="width: 697px;"> 
+                <table>
+                <tr>
+                    <td><input type="text" name="empid" id="empid" [(ngModel)]="this.emp.empid" class="form-control "></td> 
+                    <td><input type="text" name="empfirstname" id="empfirstname" [(ngModel)]="this.emp.empfirstname" class="form-control "></td> 
+                    <td><input type="text" name="emplastname" id="emplastname" [(ngModel)]="this.emp.emplastname" class="form-control "></td> 
+                    <td><input type="text" name="email" id="email" [(ngModel)]="this.emp.email" class="form-control "></td> 
+                    <td><input type="text" name="mobileno" id="mobileno" [(ngModel)]="this.emp.mobileno" class="form-control "></td> 
+                    <td><input type="submit" (click)="updating(this.emp)" value="Update"></td>
+
+
+                    
+                </tr>
+                </table>
+                </div>
+            </div>
+            <router-outlet></router-outlet>
+      </div>
+
+
+
+
+
+
+    
 </div>
-
-</div>
-
-
-
-</div>
-
-
-    <router-outlet></router-outlet>
-
+</section>
