@@ -42,7 +42,7 @@ export class UserService {
   statusOfUser:string = 'alloted';
   getAllData()
 {
-  this.statusOfUser = 'alloted';
+  this.statusOfUser = 'registered';
   return this.http.get<User[]>(this.url+'/status/'+this.statusOfUser);
 }
 
@@ -82,12 +82,24 @@ loanapp1(user)
 
 }
 
-
-getAlloted(eId)
+getUserDetails()
 {
-  console.log("id here"+eId);
+  return this.http.get<User[]>(this.url+'/getUseralldata');
+}
+
+getSingleData(userid)
+{
+  return this.http.get<User>(this.url+'/getUser'+'/'+userid);
+
+}
+
+
+
+getAlloted(empid)
+{
+  console.log("id here"+empid);
   
-  return this.http.post<User>(this.url+'/employee/users'+'/',+eId);
+  return this.http.post<User>(this.url+'/employee/users'+'/',+empid);
 
 }
 

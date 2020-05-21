@@ -1,5 +1,6 @@
 export class Response{
     responseid :number;
-    responseMessage:string;
+    responsemessage:string;
+    email:string;
     queryid:number;
 }

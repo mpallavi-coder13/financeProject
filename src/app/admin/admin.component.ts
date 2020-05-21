@@ -4,6 +4,7 @@ import { Login } from '../model/login.model';
 import { Employee } from '../model/employee.model';
 import { EmpService } from '../emp.service';
 import { RatingModule } from 'ng-starrating';
+import {AuthService} from './../auth.service';
   
 
 @Component({
@@ -19,12 +20,13 @@ export class AdminComponent implements OnInit {
 
  emp1:Employee[]=[];
   emp :Employee;
-  constructor(private route : ActivatedRoute,private router:Router,private adminservice:EmpService,private RatingModule:RatingModule) { }
+  constructor(private route : ActivatedRoute,private router:Router,private adminservice:EmpService,private RatingModule:RatingModule,private AuthService: AuthService) { }
  
   statusOfUser:String=''; 
 
-
+  
   ngOnInit() {  
+    
     this.statusOfUser = 'registered';
     
     this.route.params.subscribe(params=>{this.loginId=params['loginId']})
@@ -79,13 +81,15 @@ export class AdminComponent implements OnInit {
            this.emp=rs;
         });
       }
-    
+      upSucess = false;
       updating(u){
+        
         this.tobeeditDiv = false;
         console.log(u);
         this.adminservice.updating(u).subscribe(rs=>{
           this.emp1=rs;
         });
+        this.upSucess = true;
        }
 
 
@@ -131,6 +135,15 @@ export class AdminComponent implements OnInit {
         this.profileDiv = false;
         this.router.navigate(['letQueryViewed'],{relativeTo:this.route})
       }
-      
 
+
+      handleLogout()
+      {
+this.AuthService
+      }
+      
+closeDiv()
+{
+  this.tobeeditDiv=false;
+}
 }

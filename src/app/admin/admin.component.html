@@ -18,7 +18,7 @@
                 
                         <ul>
                         <!-- <li><button (click)='getHome()' class="btn btn-primary">Home</button></li> -->
-                        <li><button (click)='test()' class="btn btn-primary">Test Component</button></li>
+                        <li><button (click)='home()' class="btn btn-primary">Home</button></li>
 
                         <li class='has-sub' ><button class="btn btn-primary">Employee</button>
                             <ul>
@@ -50,7 +50,7 @@
 
                         <li><button (click)='getReport()' class="btn btn-primary">Report</button></li>
 
-                        <li><button (click)='logout()' class="btn btn-primary">Logout</button></li>
+                        <li><button (click)='handleLogout()' href="/logout" class="btn btn-primary">Logout</button></li>
 
         
                         </ul>
@@ -61,6 +61,8 @@
                 <!-- Profile template -->
 
             <div class="tab-pane fade show active"  role="tabpanel" aria-labelledby="home-tab" *ngIf="profileDiv">
+                <div *ngIf="upSucess"><h4 style="color: green;">you have suceessfully edited information</h4></div>
+
             <div class="row">
                 <div class="col-md-6">
                     <label>User Id</label>
@@ -125,19 +127,44 @@
 
             <div *ngIf="tobeeditDiv" style="width: 697px;"> 
                 <table>
-                <tr>
-                    <td><input type="text" name="empid" id="empid" [(ngModel)]="this.emp.empid" class="form-control "></td> 
+                  <tr>
+                    <td><input type="text" name="empid" id="empid" [(ngModel)]="this.emp.empid" class="form-control " readonly></td> <td></td>
+                  </tr>
+                  <tr>
                     <td><input type="text" name="empfirstname" id="empfirstname" [(ngModel)]="this.emp.empfirstname" class="form-control "></td> 
                     <td><input type="text" name="emplastname" id="emplastname" [(ngModel)]="this.emp.emplastname" class="form-control "></td> 
+                  </tr>
+                  <tr>
                     <td><input type="text" name="email" id="email" [(ngModel)]="this.emp.email" class="form-control "></td> 
                     <td><input type="text" name="mobileno" id="mobileno" [(ngModel)]="this.emp.mobileno" class="form-control "></td> 
-                    <td><input type="submit" (click)="updating(this.emp)" value="Update"></td>
-
-
-                    
-                </tr>
+                  </tr>
+        
+                  <tr>
+                    <td><input type="text" name="currentaddress" id="currentaddress" [(ngModel)]="this.emp.currentaddress" class="form-control "></td> 
+                    <td><input type="text" name="permanentaddress" id="permanentaddress" [(ngModel)]="this.emp.permanentaddress" class="form-control "></td> 
+                  </tr>
+        
+                  <tr>
+                    <td><input type="date" name="birthdate" id="birthdate" [(ngModel)]="this.emp.birthdate" class="form-control "></td> 
+                    <td><input type="date" name="sincedate" id="sincedate" [(ngModel)]="this.emp.sincedate" class="form-control "></td> 
+                  </tr>
+        
+                  <tr>
+                    <td><input type="text" name="pancard" id="pancard" [(ngModel)]="this.emp.pancard" class="form-control "></td> 
+                    <td><input type="text" name="aadharcard" id="aadharcard" [(ngModel)]="this.emp.aadharcard" class="form-control "></td> 
+                  </tr>
+        
+                  <tr>
+                    <td><input type="text" name="pincode" id="pincode" [(ngModel)]="this.emp.pincode" class="form-control "></td> 
+                    <td></td> 
+                  </tr>
+        
+                  <tr>
+                    <td><input type="submit" (click)="updating(this.emp)" value="Update" class="btn btn-primary"><input  type="submit" (click)="closeDiv()" value="close" class="btn btn-danger"></td>            
+                  </tr>
                 </table>
-                </div>
+            </div>
+        
             </div>
             <router-outlet></router-outlet>
       </div>

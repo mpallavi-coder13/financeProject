@@ -81,7 +81,7 @@ this.allotDiv = true;
 
   }
 
-  alloted(eId)
+  alloted(empid)
   {
  // this.eId =   this.user1.employee.empid;
     console.log("another"+this.emp1.empid)

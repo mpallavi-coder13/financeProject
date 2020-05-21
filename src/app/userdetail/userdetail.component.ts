@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EmpService} from '../emp.service';
 import { User } from '../model/user.model';
 import { Employee } from '../model/employee.model';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-userdetail',
@@ -14,10 +15,10 @@ export class UserdetailComponent implements OnInit {
   emp = new Employee();
   user1 = new User();
 
-  constructor(private EmpService:EmpService) { }
+  constructor(private EmpService:EmpService,private UserService:UserService) { }
 
   ngOnInit(): void {
-    this.EmpService.getUserDetails().subscribe(rs=>{
+    this.UserService.getUserDetails().subscribe(rs=>{
       this.user=rs;
        console.log(this.user);
     });
@@ -28,7 +29,7 @@ export class UserdetailComponent implements OnInit {
   {
     console.log("userId :"+userid);
 this.viewDetailsDiv = true;
-this.EmpService.getSingleData(userid).subscribe(rs=>{
+this.UserService.getSingleData(userid).subscribe(rs=>{
   console.log(rs);
    this.user1=rs;
    console.log(this.user1.userid)

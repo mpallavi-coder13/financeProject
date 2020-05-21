@@ -46,6 +46,11 @@ getEmp(empvalue)
 
 }
 
+// getSingleempData(empid)
+// {
+//   console.log(empid);
+//   return this.http.get<Employee>(this.url+'/getEmp/'+empid);
+// }
 
 deleteEmp(empid)
 {
@@ -92,19 +97,19 @@ userfetch(empid)
 // }
 
 
-getUserDetails()
-{
-  return this.http.get<User[]>(this.url+'/getusersalldata');
-}
+// getUserDetails()
+// {
+//   return this.http.get<User[]>(this.url+'/getusersalldata');
+// }
 
 
 
 
-getSingleData(userid)
-{
-  return this.http.get<User>(this.url+'/getSingleUser'+'/'+userid);
+// getSingleData(userid)
+// {
+//   return this.http.get<User>(this.url+'/getSingleUser'+'/'+userid);
 
-}
+// }
 
 
 

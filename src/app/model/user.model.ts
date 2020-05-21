@@ -20,5 +20,6 @@ export class User{
     userstatus:String;
     login = new Login();
     loan = new Loan();  
+    empid:number;
     employee = new Employee();
 }

@@ -38,6 +38,8 @@ import {QueryService} from './query.service';
 import { RatingModule } from 'ng-starrating';
 import { UserdetailComponent } from './userdetail/userdetail.component';
 import { QuerydetailComponent } from './querydetail/querydetail.component';
+import {AuthService} from './auth.service';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,7 @@ import { QuerydetailComponent } from './querydetail/querydetail.component';
     QueryComponent,
     UserdetailComponent,
     QuerydetailComponent,
+    LogoutComponent,
   ],
   imports: [ 
     BrowserModule,RatingModule,
@@ -80,7 +83,7 @@ import { QuerydetailComponent } from './querydetail/querydetail.component';
     RouterModule
     
   ],
-  providers: [UserService,LoanmasterService,QueryService],
+  providers: [UserService,LoanmasterService,QueryService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

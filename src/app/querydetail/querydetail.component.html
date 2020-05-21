@@ -26,7 +26,8 @@
 <div *ngIf = 'responseDiv' class="container">
     <div class="row">
         <div class="col-md-12">
-			
+            <form action="" method="post" role="form" class="contactForm">
+
                 <div id="contact-form" class="form-container" data-form-container>
                     <div class="row">
                         <div class="form-title">
@@ -44,20 +45,28 @@
                         <div class="row">
                             <span class="req-input">
                                 <span class="input-status" data-toggle="tooltip" data-placement="top" title="Please Input Your Email."> </span>
-                                <input type="text" class="form-control" name="email" id="email"  [(ngModel)]='queries1.user.email'  />
+                                <input type="text" class="form-control" name="email" id="email"  [(ngModel)]='queries1.user.email' disabled />
                             </span>
                         </div>
                         <div class="row">
                             <span class="req-input">
-                                <span class="input-status" data-toggle="tooltip" data-placement="top" title="Please Input Your Email."> </span>
-                                <input type="text" class="form-control" name="queryid" id="queryid"   [(ngModel)]='queries1.queryid'  />
+                                <span class="input-status" data-toggle="tooltip" data-placement="top" > </span>
+                                <input type="text" class="form-control" name="queryid" id="queryid"   [(ngModel)]='queries1.queryid' hidden />
+                            </span>
+                        </div>
+
+
+                        <div class="row">
+                            <span class="req-input">
+                                <span class="input-status" data-toggle="tooltip" data-placement="top" > </span>
+                                <input type="text" class="form-control" name="queryid" id="queryid"   [(ngModel)]='queries1.querysubject' />
                             </span>
                         </div>
                        
                         <div class="row">
                             <span class="req-input">
                                 <span class="input-status" data-toggle="tooltip" data-placement="top" title="Please Input Your Phone Number."> </span>
-                               <textarea type="textarea" name ="responseMessage" data-min-length="10" placeholder="Type response here...." [(ngModel)]= 'responseMessage'></textarea>
+                               <textarea type="textarea" name ="responsemessage" data-min-length="10" placeholder="Type response here...." [(ngModel)]= 'responsemessage'></textarea>
                             </span>
                         </div>
 
@@ -67,6 +76,7 @@
                         
                     </div>
                 </div>
+                </form>
             
         </div>
     </div>

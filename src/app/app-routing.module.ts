@@ -65,7 +65,7 @@ children:[
   {path:'admin/:loginId',component:AdminComponent,
 children:[
   // {path:'',component:AdminhomeComponent},
-  {path:'adminhome',component:AdminComponent },
+  {path:'admin',component:AdminComponent },
   {path:'addemployee',component:AddemployeeComponent},
   {path:'viewemployee',component:ViewemployeeComponent},
   {path:'employeesignup',component:SuceesspageComponent},
@@ -75,7 +75,8 @@ children:[
   {path:'allotUsers',component:AllotuserComponent},
   {path:'letuserViewed',component:UserdetailComponent},
   {path:'letQueryViewed',component:QuerydetailComponent},
-  {path:'testMe',component:TestingpurposeComponent}
+  {path:'testMe',component:TestingpurposeComponent},
+  {path: 'logout', component:LoginComponent},
 
 ]
 

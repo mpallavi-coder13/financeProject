@@ -1,11 +1,14 @@
 <div class="container">
     <h3>Employee Details</h3>
+    <div *ngIf="upSucess"><h4 style="color: green;">you have suceessfully edited information</h4></div>
+    <div *ngIf="delSucess"><h4 style="color:red">you have suceessfully deleted information</h4></div>
+
    <table class="table table-hover">
         <thead>
             <th>Emp's Name</th>
             <th>Lastname</th>
             <th>Email</th>
-            <th>Mobile</th>           
+            <!-- <th>Mobile</th>            -->
             <th colspan="2">Action</th>     
         </thead>
     <tbody>
@@ -13,12 +16,12 @@
           <td>{{e.empfirstname}}</td> 
           <td>{{e.emplastname}}</td> 
           <td>{{e.email}}</td> 
-          <td>{{e.mobileno}}</td>          
+          <!-- <td>{{e.mobileno}}</td>           -->
                   
            <td>
-              <button (click)="viewData(e.empid)">View</button>&nbsp;
-              <button (click)="editData(e.empid)">Edit</button>&nbsp;
-              <button (click)="deleteData(e.empid)">Delete</button>
+              <button (click)="viewData(e.empid)" class="btn btn-primary">View</button>&nbsp;
+              <button (click)="editData(e.empid)" class="btn btn-primary">Edit</button>&nbsp;
+              <button (click)="deleteData(e.empid)" class="btn btn-danger">Delete</button>
             </td>        
       </tr>    
     </tbody>    
@@ -28,13 +31,97 @@
       <div *ngIf="tobeeditDiv" style="width: 697px;"> 
         <table>
           <tr>
-            <td><input type="text" name="empid" id="empid" [(ngModel)]="emp1.empid" class="form-control "></td> 
+            <td><input type="text" name="empid" id="empid" [(ngModel)]="emp1.empid" class="form-control " readonly></td> <td></td>
+          </tr>
+          <tr>
             <td><input type="text" name="empfirstname" id="empfirstname" [(ngModel)]="emp1.empfirstname" class="form-control "></td> 
             <td><input type="text" name="emplastname" id="emplastname" [(ngModel)]="emp1.emplastname" class="form-control "></td> 
+          </tr>
+          <tr>
             <td><input type="text" name="email" id="email" [(ngModel)]="emp1.email" class="form-control "></td> 
             <td><input type="text" name="mobileno" id="mobileno" [(ngModel)]="emp1.mobileno" class="form-control "></td> 
-            <td><input type="submit" (click)="updating(emp1)" value="Update"></td>            
+          </tr>
+
+          <tr>
+            <td><input type="text" name="currentaddress" id="currentaddress" [(ngModel)]="emp1.currentaddress" class="form-control "></td> 
+            <td><input type="text" name="permanentaddress" id="permanentaddress" [(ngModel)]="emp1.permanentaddress" class="form-control "></td> 
+          </tr>
+
+          <tr>
+            <td><input type="date" name="birthdate" id="birthdate" [(ngModel)]="emp1.birthdate" class="form-control "></td> 
+            <td><input type="date" name="sincedate" id="sincedate" [(ngModel)]="emp1.sincedate" class="form-control "></td> 
+          </tr>
+
+          <tr>
+            <td><input type="text" name="pancard" id="pancard" [(ngModel)]="emp1.pancard" class="form-control "></td> 
+            <td><input type="text" name="aadharcard" id="aadharcard" [(ngModel)]="emp1.aadharcard" class="form-control "></td> 
+          </tr>
+
+          <tr>
+            <td><input type="text" name="pincode" id="pincode" [(ngModel)]="emp1.pincode" class="form-control "></td> 
+            <td></td> 
+          </tr>
+
+          <tr>
+            <td><input type="submit" (click)="updating(emp1)" value="Update" class="btn btn-primary"><input  type="submit" (click)="closeDiv()" value="close" class="btn btn-danger"></td>            
           </tr>
         </table>
     </div>
+
+
+
+    <div *ngIf = 'viewDetailsDiv'>
+      <h5>Employee details</h5>
+      
+      <!-- <div class="row">
+          <div class="col-lg-12">
+              <div class=""col-sm-4>
+              <p class="bg-info" style="font-weight: bold;">&nbsp;ID : {{user1.userid}}</p>
+              <p class="bg-info" style="font-weight: bold;">&nbsp;Full Name : {{user1.firstname+' '+user1.lastname}}</p>
+              </div>
+              <label></label>&nbsp; <label>Email : {{user1.email}}</label>&nbsp;
+              <label>Mobile : {{user1.mobileno}}</label>&nbsp;<br/>
+      
+              <label>Pan card : {{user1.pancard}}</label> &nbsp; 
+              <label>Aadhar Card : {{user1.aadharcard}}</label>&nbsp; <label>BirthDate : {{user1.birthdate}}</label>&nbsp;
+              <label>Usersince : {{user1.usersince}}</label>&nbsp;<br/>
+      
+      
+          </div>
+      
+      
+      </div> -->
+      
+      <div class="row">
+          <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;ID : {{emp1.empid}}</p></div>
+          <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;Full Name : {{emp1.empfirstname+' '+emp1.emplastname}}</p></div>
+          <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;Email : {{emp1.email}}</p></div>
+      </div>
+      
+      <div class="row">
+          <div class="col-sm-4"><p class="bg-warning" style="font-weight: bold;">&nbsp;Mobile no : {{emp1.mobileno}}</p></div>
+          <div class="col-sm-4"><p class="bg-warning" style="font-weight: bold;">&nbsp;BirthDate: {{emp1.birthdate}}</p></div>
+          <div class="col-sm-4"><p class="bg-warning" style="font-weight: bold;">&nbsp;User Since : {{emp1.sincedate}}</p></div>
+      </div>
+      
+      <div class="row">
+          <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;P-Address : {{emp1.permanentaddress}}</p></div>
+          <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;C-Address  : {{emp1.currentaddress}}</p></div>
+          <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;Pincode : {{emp1.pincode}}</p></div>
+      </div>
+      
+      <div class="row">
+          <div class="col-sm-4"><p class="bg-warning" style="font-weight: bold;">&nbsp;Aadhar card: {{emp1.aadharcard}}</p></div>
+          <div class="col-sm-4"><p class="bg-warning" style="font-weight: bold;">&nbsp;Pan card: {{emp1.pancard}}</p></div>
+      </div>
+      
+      <div class="row">
+          <!-- <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;User status : {{user1.userstatus}}</p></div> -->
+          <!-- <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;Employee alloted : {{user1.empid}}</p></div> -->
+      </div>
+      
+      <button (click)="closeDiv()" class="btn-danger">Close</button>
+      
+      
+      </div>
       </div>
