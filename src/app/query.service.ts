@@ -40,6 +40,7 @@ getSingleQueryData(queryid)
 getSendResponse(response)
 { 
   console.log(response);
+  console.log("in service :"+response.query.querystatus);
   return this.http.post<number>(this.url+'/sendQueryMail',response);
 }
 

@@ -23,7 +23,7 @@
                 <td>{{u.firstname}}</td>
                 <!-- <td>{{u.email}}</td> -->
                 <td>{{u.userstatus}}</td>
-                 <td>null</td>
+                 <td>{{u.employee.empfirstname}}</td>
                 <td><button (click)="viewDetails(u.userid)" class="btn btn-primary">View Details</button></td>
             </tr>
         </tbody>
@@ -76,7 +76,7 @@
 
 <div class="row">
     <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;User status : {{user1.userstatus}}</p></div>
-     <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;Employee alloted : {{user1.empid}}</p></div>
+     <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;Employee alloted : {{user1.employee.empfirstname}}</p></div>
 </div>
 
 <button (click)="closeDiv()" class="btn-danger">Close</button>

@@ -22,7 +22,7 @@ export class UserdetailComponent implements OnInit {
     this.UserService.getUserDetails().subscribe(rs=>{
       this.user=rs;
        console.log(this.user);
-       console.log("hii"+this.user1.employee.empfirstname);
+       console.log("hii"+this.user[0].employee.empfirstname);
     });
   }
 

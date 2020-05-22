@@ -47,13 +47,17 @@ if(rs==null)
   querystatus:'responded';
   letsendResponse()
   {
-    this.querystatus='responded';
-    this.response.query.querystatus=this.querystatus;
+      
+   // this.response.query.querystatus=this.querystatus;
+        //this.queries1.querystatus=this.querystatus;
+    console.log(this.queries1);
     this.queries1.user = this.user;
 this.response.query=  this.queries1;
+console.log(this.response.query.querystatus);
    this.QueryService.getSendResponse(this.response).subscribe(rs=>{this.response.responseid=rs});
    this.responseDiv = false;
    this.respondDiv = true;
+   console.log( this.response.query.querystatus);
   //  this.QueryService.getSendResponse(this.response).subscribe(rs=>{
   //    this.response = rs;
   //});
