@@ -15,8 +15,7 @@ export class QueryService {
   getqueryUser(userid)
   {   
       console.log(userid);
-  return this.http.get<User>(this.url+'/query/'+userid);
-
+      return this.http.get<User>(this.url+'/query/'+userid);
   }
 
   uId:number;
@@ -30,22 +29,18 @@ getQuerysubmitted(userid)
 getAllQueries()
 {
   return this.http.get<Query[]>(this.url+'/getQueryalldata');
-
 }
 
 getSingleQueryData(queryid)
 {
   console.log("in service"+queryid);
   return this.http.get<Query>(this.url+'/singlequery'+'/'+queryid);
-
-
 }
 
-getSendResponse(responses)
-{
-  console.log(responses);
-  return this.http.post<Response>(this.url+'/sendQueryMail',responses);
-
+getSendResponse(response)
+{ 
+  console.log(response);
+  return this.http.post<number>(this.url+'/sendQueryMail',response);
 }
 
 }

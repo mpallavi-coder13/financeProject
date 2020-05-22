@@ -1,5 +1,10 @@
 
-<div class="container">
+    <div *ngIf="noDataDiv"><h4 style="color:orangered">No data available</h4></div>
+    <div *ngIf="respondDiv"><h4 style="color:green">Responded successfully</h4></div>
+
+
+<div class="container" *ngIf="queryDiv">
+
     <table class="table table-stripped">
         <thead>
             <tr>
@@ -62,11 +67,17 @@
                                 <input type="text" class="form-control" name="queryid" id="queryid"   [(ngModel)]='queries1.querysubject' />
                             </span>
                         </div>
+                        <div class="row">
+                            <span class="req-input">
+                                <span class="input-status" data-toggle="tooltip" data-placement="top" > </span>
+                                <input type="text" class="form-control" name="querystatus" id="querystatus"   [(ngModel)]='queries1.querystatus' data-rule="querystatus" disabled/>
+                            </span>
+                        </div>
                        
                         <div class="row">
                             <span class="req-input">
                                 <span class="input-status" data-toggle="tooltip" data-placement="top" title="Please Input Your Phone Number."> </span>
-                               <textarea type="textarea" name ="responsemessage" data-min-length="10" placeholder="Type response here...." [(ngModel)]= 'responsemessage'></textarea>
+                               <textarea type="textarea" name ="responsemessage" data-min-length="10" placeholder="Type response here...." [(ngModel)]= 'response.responsemessage'></textarea>
                             </span>
                         </div>
 

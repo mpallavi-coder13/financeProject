@@ -6,6 +6,5 @@ export class Query
     querysubject:string;
     query:string;
     querystatus :string;
-   
     user = new User();
 }

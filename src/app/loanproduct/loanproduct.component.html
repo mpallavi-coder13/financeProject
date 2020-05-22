@@ -1,5 +1,5 @@
 <div>
-    <h3>Add Loan Products</h3>
+    <h3 class="h3Tag">Add Loan Products</h3>
       <form action="" method="post" role="form" class="contactForm">
       <div class="row">
           <div class="col-lg-6"> <div class="form-group">
@@ -28,7 +28,7 @@
         </div>
        
       
-        <div class="text-center"><input type="submit" (click)='addLoanMaster()' value="submit"></div>
+        <div class="text-center"><input type="submit" (click)='addLoanMaster()' value="submit" class="btn btn-primary"></div>
       </form>
 
 
@@ -57,8 +57,8 @@
                 <td>{{l.loanrangemax}}</td>          
                         
                  <td>
-                    <button (click)="editLoanMasterData(l.loanmanagementid)">Edit</button>&nbsp;
-                    <button (click)="deleteLoanMaster(l.loanmanagementid)">Delete</button>
+                    <button (click)="editLoanMasterData(l.loanmanagementid)" class="btn btn-warning">Edit</button>&nbsp;
+                    <button (click)="deleteLoanMaster(l.loanmanagementid)" class="btn btn-danger">Delete</button>
                   </td>        
             </tr>    
           </tbody>    

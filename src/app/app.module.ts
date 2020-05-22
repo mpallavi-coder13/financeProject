@@ -40,6 +40,7 @@ import { UserdetailComponent } from './userdetail/userdetail.component';
 import { QuerydetailComponent } from './querydetail/querydetail.component';
 import {AuthService} from './auth.service';
 import { LogoutComponent } from './logout/logout.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -80,8 +81,8 @@ import { LogoutComponent } from './logout/logout.component';
    AppRoutingModule ,
     FormsModule,
     HttpClientModule,
-    RouterModule
-    
+    RouterModule,
+    Ng2SearchPipeModule
   ],
   providers: [UserService,LoanmasterService,QueryService,AuthService],
   bootstrap: [AppComponent]

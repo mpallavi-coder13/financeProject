@@ -46,11 +46,11 @@ getEmp(empvalue)
 
 }
 
-// getSingleempData(empid)
-// {
-//   console.log(empid);
-//   return this.http.get<Employee>(this.url+'/getEmp/'+empid);
-// }
+ getSingleempData(empid)
+{
+  console.log(empid);
+ return this.http.get<Employee>(this.url+'/getEmp/'+empid);
+ }
 
 deleteEmp(empid)
 {

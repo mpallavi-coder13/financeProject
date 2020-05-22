@@ -113,6 +113,9 @@ export class AdminComponent implements OnInit {
         console.log("st"+statusOfUser);
         this.profileDiv = false;
         this.router.navigate(['allotUsers'],{relativeTo:this.route})
+
+
+        
       }
        
 

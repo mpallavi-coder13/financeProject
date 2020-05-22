@@ -17,12 +17,19 @@ export class ViewemployeeComponent implements OnInit {
   typeOfEmp :String = '';
 countEmp :number ;
 empDiv = false;
+noDataDiv = false;
+
   ngOnInit() {
 
     this.empDiv = true;
       this.typeOfEmp = 'employee'
       this.EmployeeService.getAllEmpData(this.typeOfEmp).subscribe(rs=>{
-      this.emp=rs;        
+      this.emp=rs;     
+      console.log("rs ="+this.emp);   
+      if(rs ==null)
+      {
+        this.noDataDiv = true;
+      }
     });   
 
     this.EmployeeService.getEmployeeCount().subscribe(rs=>

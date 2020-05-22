@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {QueryService} from '../query.service';
 import { Query } from '../model/query.model';
 import { User } from '../model/user.model';
+import { Response } from '../model/Response.model';
 
 @Component({
   selector: 'app-querydetail',
@@ -12,21 +13,29 @@ export class QuerydetailComponent implements OnInit {
 queries :Query[]=[];
 queries1 = new Query();
 user =new User();
-responses = new Response();
+response = new Response();
 res:Response[]=[];
   constructor(private QueryService:QueryService) { }
-
+  noDataDiv = false;
+  queryDiv=true;
   ngOnInit(): void {
     this.QueryService.getAllQueries().subscribe(rs=>{
       this.queries=rs;
       console.log("ch"+this.user.userid);
       console.log(this.queries);
+console.log("rs"+rs);
+if(rs==null)
+      {
+        this.noDataDiv = true;
+        this.queryDiv = false; 
+           }
     });
   }
 
   responseDiv = false;
   sendResponse(queryid)
   {
+    this.queries1.user = this.user;
     this.responseDiv = true;
     this.QueryService.getSingleQueryData(queryid).subscribe(rs=>{
       console.log(rs);
@@ -34,15 +43,20 @@ res:Response[]=[];
     });
   }
 
-
-
+  respondDiv=false;
+  querystatus:'responded';
   letsendResponse()
   {
-   console.log();
-   this.QueryService.getSendResponse(this.responses).subscribe(rs=>{
-    console.log(rs);
-     this.responses=rs;
-  });
+    this.querystatus='responded';
+    this.response.query.querystatus=this.querystatus;
+    this.queries1.user = this.user;
+this.response.query=  this.queries1;
+   this.QueryService.getSendResponse(this.response).subscribe(rs=>{this.response.responseid=rs});
+   this.responseDiv = false;
+   this.respondDiv = true;
+  //  this.QueryService.getSendResponse(this.response).subscribe(rs=>{
+  //    this.response = rs;
+  //});
 
 
   }

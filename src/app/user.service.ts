@@ -39,11 +39,11 @@ export class UserService {
     return this.http.get<String>(this.url+'/forgotPassword'+email);  
   }
 
-  statusOfUser:string = 'alloted';
+  userstatus:string = 'alloted';
   getAllData()
 {
-  this.statusOfUser = 'registered';
-  return this.http.get<User[]>(this.url+'/status/'+this.statusOfUser);
+  this.userstatus = 'registered';
+  return this.http.get<User[]>(this.url+'/status/'+this.userstatus);
 }
 
 
@@ -93,13 +93,18 @@ getSingleData(userid)
 
 }
 
-
-
-getAlloted(empid)
+getuserCount(empid)
 {
-  console.log("id here"+empid);
+  return this.http.get<User[]>(this.url+'/findByemp'+'/'+empid);
+
+}
+
+getAlloted(user1)
+{
+  console.log("id user"+user1);
   
-  return this.http.post<User>(this.url+'/employee/users'+'/',+empid);
+  return this.http.post<User>(this.url+'/employeeOfusers',user1);
+
 
 }
 

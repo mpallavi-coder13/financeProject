@@ -33,6 +33,9 @@ this.typeOfEmp = 'employee';
       this.user=rs;
     });
 
+
+   
+
   }
 
 
@@ -65,10 +68,10 @@ this.typeOfEmp = 'employee';
   }
 
 
-  
+  eId:number;
 uId :number;
   allotDiv = false;
-  getUserInfo(uId)
+  getUserInfo(uId,eId)
   {
 this.uId = this.user1.userid;
 this.allotDiv = true;
@@ -76,19 +79,32 @@ this.allotDiv = true;
       console.log(rs);
        this.user1=rs;       
     });
+this.eId = this.emp1.empid;
+console.log("eId"+eId);
+    this.EmpService.getSingleempData(this.eId).subscribe(rs=>{
+      console.log(rs);
+       this.emp1=rs;       
+    });
     
 
+   
 
   }
-
-  alloted(empid)
+  allotedDiv = true;
+  allotsuccessDiv = false;
+  userstatus:string;
+  alloted()
   {
- // this.eId =   this.user1.employee.empid;
-    console.log("another"+this.emp1.empid)
-    console.log(this.user);
-    this.userService.getAlloted(this.emp1.empid).subscribe(rs=>{      
+    
+    this.userstatus = 'alloted';
+this.user1.userstatus = this.userstatus;
+this.user1.employee = this.emp1;
+console.log(this.user1)
+
+    this.userService.getAlloted(this.user1).subscribe(rs=>{      
       this.user1=rs;
-         
+      this.allotedDiv = false;
+    this.allotsuccessDiv = true;
     });
   }
 

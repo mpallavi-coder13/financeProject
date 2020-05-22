@@ -18,21 +18,27 @@ export class UserdetailComponent implements OnInit {
   constructor(private EmpService:EmpService,private UserService:UserService) { }
 
   ngOnInit(): void {
+    this.user1.employee=this.emp;
     this.UserService.getUserDetails().subscribe(rs=>{
       this.user=rs;
        console.log(this.user);
+       console.log("hii"+this.user1.employee.empfirstname);
     });
   }
 
   viewDetailsDiv = false;
   viewDetails(userid)
   {
+    this.user1.employee = this.emp;
+
     console.log("userId :"+userid);
 this.viewDetailsDiv = true;
 this.UserService.getSingleData(userid).subscribe(rs=>{
   console.log(rs);
    this.user1=rs;
-   console.log(this.user1.userid)
+   console.log(this.user1);
+   console.log("empname:"+this.user1.employee);
+
    
 });
   }

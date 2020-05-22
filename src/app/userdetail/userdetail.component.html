@@ -1,4 +1,11 @@
 <div class="container">
+
+    
+    <h3 class="h3tag">User Information</h3>
+    
+    <div>
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" search here to get user...">
+      </div>
     <table class="table table-stripped">
         <thead>
             <tr>
@@ -11,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor='let u of user;'>
+            <tr *ngFor='let u of user| filter:searchText;'>
                 <td>{{u.userid}}</td>
                 <td>{{u.firstname}}</td>
                 <!-- <td>{{u.email}}</td> -->
@@ -69,7 +76,7 @@
 
 <div class="row">
     <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;User status : {{user1.userstatus}}</p></div>
-    <!-- <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;Employee alloted : {{user1.empid}}</p></div> -->
+     <div class="col-sm-4"><p class="bg-info" style="font-weight: bold;">&nbsp;Employee alloted : {{user1.empid}}</p></div>
 </div>
 
 <button (click)="closeDiv()" class="btn-danger">Close</button>

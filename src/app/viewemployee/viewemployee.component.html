@@ -1,8 +1,13 @@
 <div class="container">
-    <h3>Employee Details</h3>
+    <h3 class="h3tag">Employee Details</h3>
     <div *ngIf="upSucess"><h4 style="color: green;">you have suceessfully edited information</h4></div>
     <div *ngIf="delSucess"><h4 style="color:red">you have suceessfully deleted information</h4></div>
+    <div *ngIf="noDataDiv"><h4 style="color:orangered">No data available</h4></div>
 
+
+    <div>
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" search here to get employee...">
+    </div>
    <table class="table table-hover">
         <thead>
             <th>Emp's Name</th>
@@ -12,7 +17,7 @@
             <th colspan="2">Action</th>     
         </thead>
     <tbody>
-      <tr *ngFor='let e of emp;'>
+      <tr *ngFor='let e of emp | filter:searchText;'>
           <td>{{e.empfirstname}}</td> 
           <td>{{e.emplastname}}</td> 
           <td>{{e.email}}</td> 
